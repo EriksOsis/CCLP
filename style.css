@@ -49,9 +49,7 @@ section {
     width: 100%;
     border-radius: 10px;
     /* Rounded video edges */
-    margin-bottom: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    /* Similar shadow to the screenshot */
 }
 
 /* Title styling */
@@ -97,6 +95,7 @@ section {
 
 /* Button styling */
 .get-access-btn {
+    margin-bottom: 15px;
     padding: 15px 40px;
     font-family: "Montserrat", sans-serif;
     font-size: 18px;

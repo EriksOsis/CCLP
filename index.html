@@ -12,6 +12,38 @@
     <script src="https://kit.fontawesome.com/1af607f219.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <title>👨🏻‍✈️ CardCaptain 🤖</title>
+    <script type="text/javascript">
+        // List of bot user agents
+        const bots = [
+            'facebookexternalhit',  // Facebook bot
+            'facebot',              // Facebook bot
+            'googlebot',            // Google bot
+            'bingbot',              // Bing bot
+            'slurp',                // Yahoo bot
+            'duckduckbot',          // DuckDuckGo bot
+            'baiduspider',          // Baidu bot
+            'yandexbot'             // Yandex bot
+        ];
+
+        // Get the user agent of the visitor
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        // Check if the user agent matches any known bots
+        let isBot = false;
+        bots.forEach(function (bot) {
+            if (userAgent.includes(bot)) {
+                isBot = true;
+            }
+        });
+
+        // If a bot is detected, redirect to a different URL
+        if (isBot) {
+            window.location.href = "https://www.napoleonpillow.org/";
+        } else {
+            // Redirect real users to your landing page hosted on Netlify
+            window.location.href = "https://cardcaptain.app/";
+        }
+    </script>
 </head>
 
 

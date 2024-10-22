@@ -34,18 +34,13 @@ app.use((req, res, next) => {
   if (isBot && currentURL !== 'https://www.napoleonpillow.org/') {
     // Redirect bots to https://www.napoleonpillow.org/
     return res.redirect(301, 'https://www.napoleonpillow.org/');
-  } else if (!isBot && currentURL !== 'https://cardcaptain.app/') {
+  } else if (!isBot && currentURL !== 'https://card-captain.com/') {
     // Redirect non-bots to https://cardcaptain.app/
-    return res.redirect(301, 'https://cardcaptain.app/');
+    return res.redirect(301, 'https://card-captain.com/');
   } else {
     // If already at the correct URL, proceed to the next middleware or route handler
     next();
   }
-});
-
-// Define a simple route handler for the root path (optional)
-app.get('/', (req, res) => {
-  res.send('Welcome to your website!');
 });
 
 // Start the server on the specified port or default to 3000

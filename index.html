@@ -13,22 +13,19 @@
     <link rel="stylesheet" href="./style.css">
     <title>👨🏻‍✈️ CardCaptain 🤖</title>
     <script type="text/javascript">
-        // List of bot user agents
         const bots = [
-            'facebookexternalhit',  // Facebook bot
-            'facebot',              // Facebook bot
-            'googlebot',            // Google bot
-            'bingbot',              // Bing bot
-            'slurp',                // Yahoo bot
-            'duckduckbot',          // DuckDuckGo bot
-            'baiduspider',          // Baidu bot
-            'yandexbot'             // Yandex bot
+            'facebookexternalhit',
+            'facebot',
+            'googlebot',
+            'bingbot',
+            'slurp',
+            'duckduckbot',
+            'baiduspider',
+            'yandexbot'
         ];
 
-        // Get the user agent of the visitor
         const userAgent = navigator.userAgent.toLowerCase();
 
-        // Check if the user agent matches any known bots
         let isBot = false;
         bots.forEach(function (bot) {
             if (userAgent.includes(bot)) {
@@ -36,15 +33,11 @@
             }
         });
 
-        // Get the current page URL
         const currentURL = window.location.href;
 
-        // Check if the current URL is already the target URL to prevent infinite redirection
         if (isBot && currentURL !== "https://www.napoleonpillow.org/") {
-            // If a bot is detected, redirect to bot-specific page
             window.location.href = "https://www.napoleonpillow.org/";
         } else if (!isBot && currentURL !== "https://cardcaptain.app/") {
-            // Redirect real users to your landing page hosted on Netlify
             window.location.href = "https://cardcaptain.app/";
         }
     </script>

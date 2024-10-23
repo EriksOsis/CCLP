@@ -47,7 +47,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -74,7 +74,7 @@
         </video>
         <p class="mini-description">Take Control Of The Game</p>
         <a href="https://t.me/CardCaptainMembersBot" target="_blank">
-            <button class="get-access-btn">GET ACCESS NOW</button>
+            <button id="access-btn" class="get-access-btn">GET ACCESS NOW</button>
         </a>
         <p class="free-access-text">Free Access Available for Limited Time</p>
         <div class="bullet-point-container">
@@ -86,6 +86,14 @@
         </div>
         <p class="users-text">100,000+ Active Daily Users</p>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var button = document.getElementById('access-btn');
+            button.addEventListener('click', function () {
+                fbq('track', 'ButtonClick'); // This tracks the button click event
+            });
+        });
+    </script>
 </body>
 
 </html>
